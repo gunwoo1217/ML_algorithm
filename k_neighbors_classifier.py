@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 
 #%%
-class knn:
+class k_neighbors_classifier:
     import numpy as np
     import pandas as pd
     
