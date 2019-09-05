@@ -1,8 +1,6 @@
-#%%
 import numpy as np
 import pandas as pd
 
-#%%
 class k_neighbors_classifier:
     import numpy as np
     import pandas as pd
@@ -36,4 +34,4 @@ class k_neighbors_classifier:
         return y_pred_list
     
     def score(self, X_test, y_test):
-        return np.mean(knn.predict(X_test) == y_test)
+        return np.mean(self.predict(X_test) == y_test)

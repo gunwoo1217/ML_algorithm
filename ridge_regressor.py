@@ -1,6 +1,6 @@
 import numpy as np
 
-class ridge_regression:
+class ridge_regressor:
     
     def __init__(self, alpha = 1.0, bias = True):
         '''
@@ -18,7 +18,7 @@ class ridge_regression:
             self.X_train = np.hstack([one_vector, X_train])     
         else:
             self.X_train = X_train
-        self.y_train = y_train
+        self.y_train = y_train.reshape(len(y_train, 1))
         
         mat1 = np.linalg.inv(np.dot(self.X_train.T, self.X_train) + self.alpha * np.eye(len(self.X_train[0])))
         mat2 = np.dot(self.X_train.T, self.y_train)
