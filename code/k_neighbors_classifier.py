@@ -2,8 +2,6 @@ import numpy as np
 import pandas as pd
 
 class k_neighbors_classifier:
-    import numpy as np
-    import pandas as pd
     
     def __init__(self, k = 3):
         self.k = k
