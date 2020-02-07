@@ -13,7 +13,7 @@ class linear_regressor:
         회귀계수를 구할 수 있다.
         '''
         if X_train.ndim == 1:
-            X_train = X_train.reshape(len(X_tarin), 1)
+            X_train = X_train.reshape(len(X_train), 1)
         
         if self.bias == True:
             one_vector = np.ones([len(X_train), 1])
