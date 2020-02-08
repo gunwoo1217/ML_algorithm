@@ -24,7 +24,7 @@ class ridge_regressor:
         mat2 = np.dot(self.X_train.T, self.y_train)
         
         weight = np.dot(mat1, mat2)
-        self.weight = weight
+        self.weight = weight.flatten()
         
         return weight
     
