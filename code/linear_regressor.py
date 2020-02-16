@@ -25,7 +25,7 @@ class linear_regressor:
         mat1 = np.linalg.inv(np.dot(self.X_train.T, self.X_train))
         mat2 = np.dot(self.X_train.T, self.y_train)
         weight = np.dot(mat1, mat2)
-        self.weight = weight
+        self.weight = weight.flatten()
         
         return weight
         
