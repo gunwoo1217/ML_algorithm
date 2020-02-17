@@ -1,6 +1,6 @@
 import numpy as np
 
-class knn_regressor:
+class knn_classifier:
     
     def __init__(self, k = 3):
         self.k = k
@@ -25,9 +25,13 @@ class knn_regressor:
             diff_square_list = np.array(diff_square_list)
             near_idx = np.argsort(diff_square_list)
             
-            y_pred.append(np.mean(self.y_train[near_idx][:self.k]))
+            label = self.y_train[near_idx][:self.k]
+            label_idx, label_count = np.unique(label, return_counts = True)
+            most_counts_label = label_idx[np.argmax(label_count)]
+            y_pred.append(most_counts_label)
         
         return np.array(y_pred)
     
     def score(self, X_test, y_test):
+        
         return np.mean(self.predict(X_test) == y_test)
